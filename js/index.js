@@ -9,5 +9,14 @@
 
         const slogan = document.querySelector('header.header .slogan')
         slogan.classList.remove('start')
+
+        setTimeout(() => {
+            if (window.location.hash) {
+                const target = document.querySelector(`a[name='${window.location.hash.replace('#','')}']`)
+                if (target) {
+                    target.scrollIntoView({behavior: 'smooth'})
+                }
+            }
+        }, 100)
     })
 })()
